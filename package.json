@@ -1,0 +1,43 @@
+{
+  "name": "prerender-spa-plugin-example-vue2-webpack-router",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Drew Lustro <drewlustro@gmail.com>",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && npm run create-css",
+    "trim-css": "echo 'trimming css...' && node ./src/css/purgecss.config.js",
+    "generate-raw-css": "echo 'generating css...' && ./node_modules/.bin/tailwind build ./src/css/tailwind.css -c ./src/css/tailwind.js -o ./dist/main.css",
+    "create-css": "npm run generate-raw-css && npm run trim-css"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.1.1",
+    "glob": "^7.1.2",
+    "precss": "^3.1.2",
+    "vue": "^2.5.11",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.1.4",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.4",
+    "html-webpack-plugin": "^2.30.1",
+    "postcss": "^6.0.23",
+    "postcss-loader": "^2.0.8",
+    "prerender-spa-plugin": "^3.0.0",
+    "purgecss": "^1.0.1",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
+    "style-loader": "^0.19.1",
+    "tailwindcss": "^0.6.5",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}
