@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && npm run create-css",
-    "trim-css": "echo 'trimming css...' && node ./src/css/purgecss.config.js",
+    "trim-css": "echo 'trimming css...' && node ./src/css/purgeCSS.js",
     "generate-raw-css": "echo 'generating css...' && ./node_modules/.bin/tailwind build ./src/css/tailwind.css -c ./src/css/tailwind.js -o ./dist/main.css",
     "create-css": "npm run generate-raw-css && npm run trim-css"
   },
